@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+            <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+                    <%= yield :head %>
+                        <!-- Bootstrap core CSS -->
+                        <%= stylesheet_link_tag '/vendor/bootstrap/css/bootstrap' %>
+                            <!-- Additional CSS Files -->
+                            <%= stylesheet_link_tag '/assets/css/fontawesome' %>
+                                <%= stylesheet_link_tag 'owl' %>
+</head>
+
+<body>
+    <%= render 'layouts/preload' %>
+
+        <header class="">
+            <%= render 'layouts/header' %>
+        </header>
+
+        <main>
+            <%= yield %>
+        </main>
+
+        <footer>
+            <%= render 'layouts/footer' %>
+        </footer>
+
+        <% javascript_pack_tag 'custom', 'data-turbolinks-track': 'reload' %>
+
+</body>
+
+</html>
